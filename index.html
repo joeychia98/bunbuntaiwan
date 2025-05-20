@@ -3,19 +3,71 @@
 <head>
   <title>BUNBUN</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    h1, h2 {
-      text-align: center;
-      background-color: rgb(79, 78, 78);
-      color: white;
-      padding: 10px;
-      margin-bottom: 0;
-      font-family: "Helvetica", "Arial", sans-serif;
+ 
+</head>
+<body>
+     <div class="hero-section">
+      <div class="hero-content">
+        <h1> BUN BUN </h1>
+        <a href="order.html" class="order-link">
+          <h2>企業訂購<i class="fas fa-angle-double-right"></i></h2>
+        </a>
+    </div>
+  </div>
+   <style>
+    .order-link{
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease;
     }
-
-    h2 {
+    .order-link:hover{
+      transform: scale(1.05);
+    }
+    .order-link h2{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 28px;
+      color:white;
+      background-color: rgb(79, 78, 78);
+      padding:10px 20px;
+      border-radius:8px;
+      font-family: "Noto Sans TC","Microsoft JhengHei" sans-serif;
       margin-top: 0;
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+    .hero-content{
+      text-align: center;
+    }
+    .hero-section {
+        background-image: url("buntitle.jpg");
+        background-size : cover;
+        background-position: center;
+        height : 500px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   h1{
+        font-size: 150px;
+        color: #2a2929;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+    }
+    .hero-button{
+        display: inline-block;
+        margin-top: 20px;
+        padding:12px 24px;
+        background-color: #ffd966;
+        color: #333;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+    }
+    .hero-button:hover{
+        background-color: #f1c232;
     }
 
     .image-container {
@@ -64,10 +116,6 @@
       font-weight: bold;
     }
   </style>
-</head>
-<body>
-  <h1>BUNBUN</h1>
-  <h2>企業訂購</h2>
 
   <div class="image-container">
     <img src="inttitle.jpg" alt="簡介標題">
