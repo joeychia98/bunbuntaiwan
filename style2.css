@@ -357,17 +357,31 @@ footer {
     font-size: 32px;
     margin-top: 150px;
   }
-  .navbar {
-    /* 保持固定定位 */
-    padding: 10px 20px; /* 左右 padding 適當縮小 */
+    .navbar {
+    flex-direction: row;       /* 一直橫排 */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 20px;
   }
+
   .nav-links {
-    /* 保持橫向排列就不要改 flex-direction */
-    padding-right: 10px; /* 視需要縮小padding */
-    padding-top: 10px;
+    flex-direction: row;       /* 一直橫排 */
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    white-space: nowrap;
+    gap: 10px;
   }
+
   .nav-links a {
-    font-size: 14px; /* 如果太擠，就縮字 */
-    padding: 5px 10px;
+    font-size: 16px;          /* 可依手機縮小字體 */
+    padding: 8px 10px;
+  }
+
+   .logo img {
+    height: 30px;  /* 或 60px 視覺好看即可 */
+    padding-left: 0px;
   }
 }
