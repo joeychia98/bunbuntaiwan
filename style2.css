@@ -1,3 +1,4 @@
+
 h1{
      margin: 120px 20px 20px;
       font-size: 45px;
@@ -59,7 +60,7 @@ body{
    text-decoration: none;
     color: #000000;
     padding: 10px 20px;
-    font: 18px;
+    font-size: 18px;
    
 }
 .nav-links a:hover{
@@ -322,8 +323,8 @@ footer {
       padding-left: 0;
       font-weight: bold;
     }
-
-@media(max-width:480px){
+  
+@media(max-width:768px){
   .cart {
     width: 100%;
     left: 0;
@@ -333,12 +334,12 @@ footer {
 
 @media(max-width:768px){
   .column4 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media(max-width:480px){
   .column4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
@@ -351,3 +352,28 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+    margin-top: 100px;
+  }
+  .navbar {
+    /* 保持固定定位 */
+    padding: 10px 20px; /* 左右 padding 適當縮小 */
+  }
+  .nav-links {
+    flex-direction: column;    /* 改成垂直排列 */
+    align-items: center;       /* 置中 */
+    margin-left: 0;            /* 移除 margin-left 自動推右 */
+    padding-right: 0;          /* 移除多餘右邊距 */
+    padding-top: 10px;         /* 適度調整 */
+    white-space: normal;       /* 讓文字可換行 */
+    width: 100%;               /* 佔滿寬度 */
+  }
+  .nav-links a {
+    padding: 10px 0;           /* 鏈接上下間距 */
+    font-size: 16px;           /* 字體稍微小一點 */
+    width: 100%;               /* 鏈接寬度佔滿 */
+    text-align: center;
+  }
+}
