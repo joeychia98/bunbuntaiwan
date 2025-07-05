@@ -1,0 +1,353 @@
+h1{
+     margin: 120px 20px 20px;
+      font-size: 45px;
+      font-family: "Noto Sans TC","Microsoft JhengHei" sans-serif;
+  
+    }
+
+body{
+    margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+    background-color: white;
+    color: white;
+    z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+    margin-left: auto;
+    color:#333;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: "Noto Sans TC", sans-serif;
+    white-space: nowrap;   
+    padding-right: 80px;
+    padding-top: 30px;
+}
+.bg1 { background-image: url(肉鬆.png); }
+.bg2 { background-image: url(鮪魚.png); }
+.bg3 { background-image: url(蛋沙拉.png); }
+.bg4 { background-image: url(可樂餅.png); }
+.bg5 { background-image: url(厚蛋培根.png); }
+.bg6 { background-image: url(素蛋.png); }
+.bg7 { background-image: url(起司德腸.png); }
+.bg8 { background-image: url(肉醬德腸.png); }
+.bg9 { background-image: url(脆雞.png); }
+.bg10 { background-image: url(青醬乳酪雞.png); }
+.bg11 { background-image: url(塔塔炸蝦.png); }
+.bg12 { background-image: url(油條麻辣豬.png); }
+
+.logo img{
+  height: 90px;
+  padding-left: 80px;
+ }
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links a {
+   text-decoration: none;
+    color: #000000;
+    padding: 10px 20px;
+    font: 18px;
+   
+}
+.nav-links a:hover{
+    color:#f1c232;
+}
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.column4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 每排4個 */
+  gap: 20px;
+ 
+}
+
+.column-box {
+  aspect-ratio: 1 / 1; /* 保持正方形 */
+  background-color: #f1c232;
+  background-size : cover;
+  background-position: center;
+  overflow: hidden;
+  border-radius: 0;
+  position: relative;
+}
+
+.overlay-text{
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 90%;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Noto Sans TC", sans-serif;
+  white-space: nowrap;
+  color: rgb(53, 52, 52);
+}
+
+.row-label{
+  font-weight: bold;
+  padding: 10px;
+}
+
+.cart-icon {
+  position: fixed;
+  font-size: 24px;
+  color:rgb(100, 101, 101);
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: rgb(100, 101, 101);
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+#cart-count.hidden{
+  display: none;
+  border-radius: 0 0 10px 10px;
+}
+
+#cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.cart-item-card {
+  border: 1px solid #ccc;
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.cart-item-card div{
+  margin-bottom: 6px;
+}
+
+.checkout-btn {
+  float: right;
+  margin-top: 8px;
+  background-color: #535553; /* 綠色 */
+  color: white;
+  padding: 6px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #7c7e7d;
+}
+
+
+.menu-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #b8b8b8;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.menu-options {
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+}
+
+
+.qty{
+  border: none;
+  width: 80%;
+  text-align: center;
+  size: 32px;
+  background-color: rgb(255, 255, 255);
+  border-radius:12px ;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.label-set{
+ color : rgb(49, 48, 48);
+ font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+ margin-top: 10px;
+}
+
+.label-setdrink{
+  color:rgb(49, 48, 48);
+}
+
+.label-addon {
+  color : rgb(49, 48, 48);
+ font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+ margin-top: 10px;
+}
+
+.set{
+  border-radius: 12px;
+  border: none;
+  padding: 2px 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.setdrink{
+  border-radius: 12px;
+  border: none;
+  padding: 2px 10px;
+  text-align: center;
+}
+
+.add-item{
+  border-radius: 12px;
+  border: none;
+  padding: 5px 20px;
+  background-color: rgb(86, 83, 83);
+  color: #ffffff;
+  margin-top: 12px;
+}
+
+.addon{
+  border-radius: 12px;
+  border: none;
+  padding: 2px 10px;
+  text-align: center;
+}
+button.add-item {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+button.add-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cart {
+  position: fixed;
+  top: 60px; /* 頁首高度 */
+  right: 0;
+  width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-left: 2px solid #ccc;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; 
+  color: rgb(0, 0, 0);
+  padding: 0 5px;
+  float: right;
+}
+
+.remove-btn:hover {
+  color: rgb(242, 3, 3);
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+      background-color: rgb(79, 78, 78);
+      color: white;
+      width: 100vw;
+      padding: 30px 0;
+      box-sizing: border-box;
+    }
+.footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 0 40px;
+    }
+
+.footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+    }
+.footer-social-icon-wrapper i {
+      font-size: 24px;
+      color: white;
+      margin-right: 15px;
+    }
+
+.footer-column h3, .footer-column p, .footer-column ul {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+.footer-column ul {
+      list-style: none;
+      padding-left: 0;
+      font-weight: bold;
+    }
+
+@media(max-width:480px){
+  .cart {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media(max-width:768px){
+  .column4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width:480px){
+  .column4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:768px){
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    padding-top: 10px;
+  }
+}
+

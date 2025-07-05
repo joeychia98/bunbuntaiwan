@@ -1,0 +1,167 @@
+<h3>企業/團購訂單詳細資訊</h3>
+<p>請您務必留下以下資訊，收到訂單後我們會儘快回復您！</p>
+
+<form id="orderForm" class="order-form">
+  <div class="form-group">
+    <label for="buyerName">姓名</label>
+    <input type="text" id="buyerName" name="buyerName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="buyerPhone">手機號碼</label>
+    <input type="tel" id="buyerPhone" name="buyerPhone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="buyerLineId">Line ID</label>
+    <input type="text" id="buyerLineId" name="buyerLineId" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryDate">送達日期</label>
+    <input type="date" id="deliveryDate" name="deliveryDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryTime">送達時間</label>
+    <input type="time" id="deliveryTime" name="deliveryTime" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryLocation">送達地址</label>
+    <input type="text" id="deliveryLocation" name="deliveryLocation" required>
+    <small>外縣市也可依訂購盒數，討論可送達距離（請與我們Line聯繫，id:@bunbun）</small>
+  </div>
+
+  <div class="form-group">
+    <label for="recipientName">收貨人姓名</label>
+    <input type="text" id="recipientName" name="recipientName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="recipientPhone">收貨人手機號碼</label>
+    <input type="tel" id="recipientPhone" name="recipientPhone" required>
+  </div>
+
+  <div class="form-group checkbox">
+    <label><input type="checkbox" id="sameAsBuyer"> 收貨人與訂購人相同</label>
+  </div>
+
+  <div class="form-group">
+    <label for="receiptOption">發票選項</label>
+    <select id="receiptOption" name="receiptOption">
+      <option value="手開收據">手開收據</option>
+      <option value="統編">統編</option>
+      <option value="紙本發票">紙本發票</option>
+    </select>
+  </div>
+
+  <div class="form-group hidden" id="taxIdField">
+    <label for="taxId">統一編號</label>
+    <input type="text" id="taxId" name="taxId" maxlength="8" placeholder="請輸入8碼統編">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="submit-btn">送出訂單</button>
+  </div>
+
+  <iframe name="hiddenFrame" style="display:none;"></iframe>
+</form>
+
+<style>
+  /* 表單美化 */
+.order-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #f9f9f9;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.order-form h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.order-form p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.order-form .form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form .form-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.order-form .form-group input,
+.order-form .form-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.order-form .form-group input:focus,
+.order-form .form-group select:focus {
+  border-color: #f1c232;
+  outline: none;
+}
+
+.order-form .form-group small {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.order-form .form-group.checkbox label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}
+
+.order-form .form-group.checkbox input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.order-form .submit-btn {
+  background-color: #535553;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.order-form .submit-btn:hover {
+  background-color: #7c7e7d;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+  .order-form {
+    margin: 10px;
+    padding: 15px 20px;
+  }
+
+  .order-form .submit-btn {
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+}
+
+</style>

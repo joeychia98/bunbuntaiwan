@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>企業訂購 | BUN BUN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .step-content { display: none; }
+    .step-content.active { display: block; }
+    button { margin: 10px; padding: 10px 20px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="logo.jpg" alt="BUN BUN Logo"></a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="order.html">菜單/企業訂購</a>
+      <a href="about.html">分店資訊</a>
+    </nav>
+    <div class="cart-icon" onclick="toggleCart()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count" class="hidden">0</span>
+    </div>
+  </header>
+
+  <main style="margin-top:150px; padding:20px;">
+    <!-- STEP 1 -->
+    <div class="step-content active" id="step1">
+      <h2>訂單明細</h2>
+      <table id="checkout-table" border="1" cellpadding="8">
+        <thead>
+          <tr>
+            <th>品項</th>
+            <th>數量</th>
+            <th>單價</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" style="text-align:right;">總計：</td>
+            <td id="total-price">$0</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div style="margin-top:20px;">
+        <button type="button" onclick="location.href='order.html'">返回菜單修改</button>
+        <button type="button" onclick="nextStep(2)">下一步</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-content" id="step2">
+      <h2>填寫訂購資料</h2>
+      <form id="orderForm">
+        <label>姓名: <input type="text" id="buyerName" required></label><br>
+        <label>手機: <input type="tel" id="buyerPhone" required></label><br>
+        <label>Line ID: <input type="text" id="buyerLineId" required></label><br>
+        <label>送達日期: <input type="date" id="deliveryDate" required></label><br>
+        <label>送達時間: <input type="time" id="deliveryTime" required></label><br>
+        <label>送達地址: <input type="text" id="deliveryLocation" required></label><br>
+        <p>外縣市也可依盒數討論可送達距離(請與我們Line聯繫)</p>
+        <label>收貨人姓名: <input type="text" id="recipientName" required></label><br>
+        <label>收貨人手機: <input type="tel" id="recipientPhone" required></label><br>
+        <label><input type="checkbox" id="sameAsBuyer"> 收貨人與訂購人相同</label><br>
+        <label>發票選項:
+          <select id="receiptOption">
+            <option value="手開收據">手開收據</option>
+            <option value="統編">統編</option>
+            <option value="紙本發票">紙本發票</option>
+          </select>
+        </label>
+        <div id="taxIdField" style="display:none;">
+          <label>統一編號: <input type="text" id="taxId" maxlength="8"></label>
+        </div>
+      </form>
+      <div style="margin-top:20px;">
+        <button type="button" onclick="prevStep(1)">上一步</button>
+        <button type="button" onclick="nextStep(3)">下一步</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-content" id="step3">
+      <h2>確認訂單資訊</h2>
+      <div id="confirm-summary">
+        <!-- JS 會帶進 summary -->
+      </div>
+      <div style="margin-top:20px;">
+        <button type="button" onclick="prevStep(2)">上一步</button>
+        <button type="button" onclick="submitOrder()">確認送出</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>社群平台</h3>
+        <div class="footer-social-icon-wrapper">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>聯絡我們</h3>
+        <p>Email: bunbuntcc@gmail.com</p>
+        <p>/ BUN BUN SHOP /</p>
+        <p>台中 國美店</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart-box" class="cart hidden">
+    <h4>🛒 購物車</h4>
+    <ul id="cart-items"></ul>
+    <div id="cart-total">總金額：NT$0</div>
+    <button class="checkout-btn" onclick="checkout()">結帳</button>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      document.querySelectorAll(".step-content").forEach(el => el.classList.remove("active"));
+      document.getElementById("step"+step).classList.add("active");
+      if (step === 3) {
+        // 填入 summary
+        let summary = `
+          <h3>聯絡資訊</h3>
+          姓名: ${document.getElementById("buyerName").value}<br>
+          手機: ${document.getElementById("buyerPhone").value}<br>
+          Line ID: ${document.getElementById("buyerLineId").value}<br>
+          日期: ${document.getElementById("deliveryDate").value}<br>
+          時間: ${document.getElementById("deliveryTime").value}<br>
+          地址: ${document.getElementById("deliveryLocation").value}<br>
+        `;
+        document.getElementById("confirm-summary").innerHTML = summary;
+      }
+    }
+    function prevStep(step) {
+      document.querySelectorAll(".step-content").forEach(el => el.classList.remove("active"));
+      document.getElementById("step"+step).classList.add("active");
+    }
+    function submitOrder() {
+      alert("訂單已送出！我們會盡快與您聯繫！");
+      location.href="index.html";
+    }
+    // 同步收件人
+    document.getElementById("sameAsBuyer").addEventListener("change", function() {
+      if (this.checked) {
+        document.getElementById("recipientName").value = document.getElementById("buyerName").value;
+        document.getElementById("recipientPhone").value = document.getElementById("buyerPhone").value;
+      }
+    });
+    // 統編顯示
+    document.getElementById("receiptOption").addEventListener("change", function(){
+      if (this.value === "統編") {
+        document.getElementById("taxIdField").style.display="block";
+      } else {
+        document.getElementById("taxIdField").style.display="none";
+      }
+    });
+  </script>
+</body>
+</html>

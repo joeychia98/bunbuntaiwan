@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>企業訂購 | BUN BUN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+ <body>
+    <header id ="navbar" class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.jpg" alt="BUN BUN Logo">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="order.html">菜單/企業訂購</a>
+        <a href="about.html">分店資訊</a>
+      </nav> 
+     <div class="cart-icon" onclick="toggleCart()">
+     <i class="fas fa-shopping-cart"></i>
+     <span id="cart-count" class="hidden">0</span>
+     </div>
+    </header>
+  <main>
+<div class="progress-steps">
+  <div class="step-item" data-step="1">
+    <div class="step-circle active" id="circle1">1</div>
+    <div class="step-label">餐點確認</div>
+  </div>
+  <div class="step-line" id="line1"></div>
+
+  <div class="step-item" data-step="2">
+    <div class="step-circle" id="circle2">2</div>
+    <div class="step-label">填寫資料</div>
+  </div>
+  <div class="step-line" id="line2"></div>
+
+  <div class="step-item" data-step="3">
+    <div class="step-circle" id="circle3">3</div>
+    <div class="step-label">確認送出</div>
+  </div>
+</div>
+
+
+    <div class="step-content active" id="step1">
+    <h2>訂單明細</h2>
+<table id="checkout-table" border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>品項</th>
+      <th>數量</th>
+      <th>單價</th>
+      <th>小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 購物車項目會在這邊加進來 -->
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3" style="text-align: right;">總計：</td>
+      <td id="total-price">$0</td>
+    </tr>
+  </tfoot>
+</table>
+<div class = "button-row">
+        <button type="button" onclick="location.href='order.html'">返回菜單修改</button>
+        <button type="button" onclick="nextStep(2)">下一步</button>
+ </div>
+</div>
+
+<div class="step-content" id="step2">
+  <div class="order-info">
+   <h3>企業/團購訂單詳細資訊</h3>
+ </div>
+    <div class="info-box">
+  <p>請您務必留下以下資訊，收到訂單後我們會儘快回復您！</p>
+</div>
+
+<form id="orderForm" class="order-form">
+  <div class="form-group">
+    <label for="buyerName">姓名</label>
+    <input type="text" id="buyerName" name="buyerName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="buyerPhone">手機號碼</label>
+    <input type="tel" id="buyerPhone" name="buyerPhone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="buyerLineId">Line ID</label>
+    <input type="text" id="buyerLineId" name="buyerLineId" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryDate">送達日期</label>
+    <input type="date" id="deliveryDate" name="deliveryDate" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryTime">送達時間</label>
+    <input type="time" id="deliveryTime" name="deliveryTime" required>
+  </div>
+
+  <div class="form-group">
+    <label for="deliveryLocation">送達地址</label>
+    <input type="text" id="deliveryLocation" name="deliveryLocation" required>
+    <small>外縣市也可依訂購盒數，討論可送達距離（請與我們Line聯繫，id:@bunbun）</small>
+  </div>
+
+  <div class="form-group">
+    <label for="recipientName">收貨人姓名</label>
+    <input type="text" id="recipientName" name="recipientName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="recipientPhone">收貨人手機號碼</label>
+    <input type="tel" id="recipientPhone" name="recipientPhone" required>
+  </div>
+
+  <div class="form-group checkbox">
+    <label><input type="checkbox" id="sameAsBuyer"> 收貨人與訂購人相同</label>
+  </div>
+
+  <div class="form-group">
+    <label for="receiptOption">發票選項</label>
+    <select id="receiptOption" name="receiptOption">
+      <option value="手開收據">手開收據</option>
+      <option value="統編">統編</option>
+      <option value="紙本發票">紙本發票</option>
+    </select>
+  </div>
+
+  <div class="form-group hidden" id="taxIdField">
+    <label for="taxId">統一編號</label>
+    <input type="text" id="taxId" name="taxId" maxlength="8" placeholder="請輸入8碼統編">
+  </div>
+  <iframe name="hiddenFrame" style="display:none;"></iframe>
+</form>
+    <div class="step2b">
+        <button type="button" onclick="prevStep(1)">上一步</button>
+        <button type="button" onclick="nextStep(3)">下一步</button>
+      </div>
+    </div>
+
+<div class="step-content" id="step3">
+  <h2>請確認您的訂單</h2>
+  <div id="confirm-summary"></div>
+  <h3>訂單送出後，我們將會用 LINE 與您聯繫！請耐心等候 <i class="fas fa-smile"></i></h3>
+  <h4>更多資訊也可諮詢官方 Line ID: @bunbun</h4>
+  <div style="margin-top: 20px; text-align: right;">
+    <button type="button" onclick="prevStep(2)">上一步</button>
+    <button type="button" onclick="nextToReceipt()">確認送出</button>
+  </div>
+</div>
+
+  </main>
+<script src="cart.js"></script>
+<script src="checkout.js"></script>
+<footer>
+    <div class="footer-content">
+      <!-- 左邊：社群平台 -->
+      <div class="footer-column">
+        <h3>社群平台</h3>
+        <div class="footer-social-icon-wrapper">
+          <a href="https://www.instagram.com/bunbuntw/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.threads.net/@bunbuntw" target="_blank"><i class="fab fa-threads"></i></a>
+          <a href="https://line.me/R/ti/p/@bunbun" target="_blank"><i class="fab fa-line"></i></a>
+          <a href="https://m.facebook.com/bunbuntcc/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <!-- 右邊：聯絡我們 -->
+      <div class="footer-column">
+        <h3>聯絡我們</h3>
+        <p>Email: bunbuntcc@gmail.com</p>
+        <p>/ BUN BUN SHOP /</p>
+        <ul>
+          <li>Taichung 台中</li>
+        </ul>
+        <p>
+          國美店｜台中市西區五權一街104號<br>
+          電話：04-23762816<br>
+          文心店｜台中市南屯區文心路一段215號<br>
+          電話：04-23829665
+        </p>
+        <ul>
+          <li>Taipei 台北</li>
+        </ul>
+        <p>
+          中山店｜台北市大同區南京西路18巷20號<br>
+          電話：02-2588883
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cart-box" class="cart hidden">
+  <h4>🛒 購物車</h4>
+  <ul id="cart-items"></ul>
+  <div id="cart-total">總金額：NT$0</div>
+  <button class="checkout-btn" onclick="checkout()">結帳</button>
+</div>
+
+</body>
+</html>
+

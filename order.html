@@ -3,16 +3,596 @@
 <head>
   <meta charset="UTF-8">
   <title>企業訂購 | BUN BUN</title>
-  <style>
-    body {
-      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      padding: 40px;
-      background-color: #f5f5f5;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style2.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
-<body>
-  <h1>企業訂購</h1>
-  <p>這裡是企業訂購的內容，你可以放訂購表單、聯絡資訊或 QR Code 等等。</p>
-</body>
+ <body>
+    <header id ="navbar" class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.jpg" alt="BUN BUN Logo">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="order.html">菜單/企業訂購</a>
+        <a href="about.html">分店資訊</a>
+      </nav> 
+     <div class="cart-icon" onclick="toggleCart()">
+     <i class="fas fa-shopping-cart"></i>
+     <span id="cart-count" class="hidden">0</span>
+     </div>
+    </header>
+
+  <main>
+
+  <h1>菜單 & 企業訂購單</h1> 
+  <div class="container">
+        <b>早餐系列[10:30前供應]</b>
+  <div class="column4">
+    <div class="menu-card single">
+  <div class="column-box bg1">
+    <div class="overlay-text">乳酪肉鬆 $95</div>
+  </div>
+  <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>     
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="乳酪肉鬆" data-price="95">加入餐點</button>
+           </div>
+         </div>
+ <div class="menu-card single">
+    <div class="column-box bg2">
+        <div class="overlay-text">法式鮪魚 $95</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>     
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+         <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="法式鮪魚" data-price="95">加入餐點</button>
+           </div>
+ </div>
+  <div class="menu-card single">
+    <div class="column-box bg3">
+        <div class="overlay-text">日式蛋沙拉(蛋奶素) $95</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+          <option value="素食冷麵沙拉" data-price="100">素食冷麵沙拉+$100</option>     
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="日式蛋沙拉" data-price="95">加入餐點</button>
+           </div>
+  </div>
+  <div class="menu-card single">
+    <div class="column-box bg4">
+        <div class="overlay-text">咖哩可樂餅(蛋奶素) $95</div>
+  </div>
+   <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+          <option value="素食冷麵沙拉" data-price="100">素食冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="咖哩可樂餅" data-price="95">加入餐點</button>
+           </div>
+    </div>
+   </div>
+    <div class="row-label">全天候供應</div>
+      <div class="column4">
+     <div class="menu-card single">
+    <div class="column-box bg5">
+        <div class="overlay-text">厚蛋培根 $130</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+          </div>
+          <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="厚蛋培根" data-price="130">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg6">
+        <div class="overlay-text">素厚蛋(蛋奶素) $120</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+          <option value="素食冷麵沙拉" data-price="100">素食冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="素厚蛋" data-price="120">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg7">
+        <div class="overlay-text">起司德腸 $150</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶" data-price="10">煉乳紅茶+$10</option>
+          <option value="鮮奶茶" data-price="30">鮮奶茶+$30</option>
+          <option value="水果茶蘇打" data-price="30">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡" data-price="30">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶" data-price="30">咖啡牛奶+$55</option>
+          <option value="蘋果汁" data-price="30">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬" data-price="30">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="起司德腸" data-price="150">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg8">
+        <div class="overlay-text">辣肉醬德腸 $160</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶">煉乳紅茶+$10</option>
+          <option value="鮮奶茶">鮮奶茶+$30</option>
+          <option value="水果茶蘇打">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶">咖啡牛奶+$55</option>
+          <option value="蘋果汁">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="辣肉醬德腸" data-price="160">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg9">
+        <div class="overlay-text">辣肉醬脆雞 $160</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">+套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶">煉乳紅茶+$10</option>
+          <option value="鮮奶茶">鮮奶茶+$30</option>
+          <option value="水果茶蘇打">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶">咖啡牛奶+$55</option>
+          <option value="蘋果汁">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="辣肉醬脆雞" data-price="160">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg10">
+        <div class="overlay-text">青醬乳酪雞 $160</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶">煉乳紅茶+$10</option>
+          <option value="鮮奶茶">鮮奶茶+$30</option>
+          <option value="水果茶蘇打">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶">咖啡牛奶+$55</option>
+          <option value="蘋果汁">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="青醬乳酪雞" data-price="160">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg11">
+        <div class="overlay-text">塔塔炸蝦 $165</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶">煉乳紅茶+$10</option>
+          <option value="鮮奶茶">鮮奶茶+$30</option>
+          <option value="水果茶蘇打">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶">咖啡牛奶+$55</option>
+          <option value="蘋果汁">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="塔塔炸蝦" data-price="165">加入餐點</button>
+           </div>
+    </div>
+    <div class="menu-card single">
+    <div class="column-box bg12">
+        <div class="overlay-text">油條麻辣豬 $150</div>
+    </div>
+     <div class="menu-options">
+         <label for="setSelect" class="label-set">套餐:</label>
+         <select class="set">
+          <option value="單點" class="single">單點(不加套餐)</option>
+          <option value="薯條(奶焗醬)" data-price="100">薯條(奶焗醬)+$100</option>
+          <option value="薯條(番茄醬)" data-price="100">薯條(番茄醬)+$100</option>
+          <option value="格子薯(奶焗醬)" data-price="120">格子薯(奶焗醬)+$120</option>
+          <option value="格子薯(番茄醬)" data-price="120">格子薯(番茄醬)+$120</option>
+          <option value="冷麵沙拉" data-price="100">冷麵沙拉+$100</option>
+         </select><br>
+         <div class="drink-section">
+         <label for="setSelect" class="label-setdrink">套餐飲料:</label>
+        <select class="setdrink">
+          <option value="茶廠紅茶">茶廠紅茶</option>
+          <option value="可樂">可樂</option>
+          <option value="煉乳紅茶">煉乳紅茶+$10</option>
+          <option value="鮮奶茶">鮮奶茶+$30</option>
+          <option value="水果茶蘇打">水果茶蘇打+$30</option>
+          <option value="冷萃咖啡">冷萃咖啡+$30</option>
+          <option value="咖啡牛奶">咖啡牛奶+$55</option>
+          <option value="蘋果汁">蘋果汁+$30</option>
+          <option value="蜂蜜檸檬">蜂蜜檸檬+$30</option>
+        </select><br>
+        </div>
+        <div class="addon-section">
+         <label for="setAddon" class="label-addon">套餐加購:</label>
+        <select class="addon">
+          <option value="不加購">不加購</option>
+          <option value="手工甜芋球" data-price="30">手工甜芋球(3顆)+$30</option>
+          <option value="雞塊" data-price="30">雞塊(3塊)+$30</option>
+        </select><br>
+        </div>
+         <label>
+         <input type="number" min="1" max="1000" value="1" class="qty">
+         </label><br>
+          <button class="add-item" data-main="油條麻辣豬" data-price="150">加入餐點</button>
+           </div>
+    </div>
+  </div>
+
+</div>
+  </main>
+
+  <div id="cart-box" class="cart hidden">
+  <h4>🛒 購物車</h4>
+  <ul id="cart-items"></ul>
+  <div id="cart-total">總金額：NT$0</div>
+  <button class="checkout-btn" onclick="checkout()">結帳</button>
+</div>
+
+
+<script src="order.js"></script>
+<script src="cart.js"></script>
+
+ <footer>
+    <div class="footer-content">
+      <!-- 左邊：社群平台 -->
+      <div class="footer-column">
+        <h3>社群平台</h3>
+        <div class="footer-social-icon-wrapper">
+          <a href="https://www.instagram.com/bunbuntw/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.threads.net/@bunbuntw" target="_blank"><i class="fab fa-threads"></i></a>
+          <a href="https://line.me/R/ti/p/@bunbun" target="_blank"><i class="fab fa-line"></i></a>
+          <a href="https://m.facebook.com/bunbuntcc/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <!-- 右邊：聯絡我們 -->
+      <div class="footer-column">
+        <h3>聯絡我們</h3>
+        <p>Email: bunbuntcc@gmail.com</p>
+        <p>/ BUN BUN SHOP /</p>
+        <ul>
+          <li>Taichung 台中</li>
+        </ul>
+        <address>
+          國美店｜台中市西區五權一街104號<br>
+          電話：04-23762816<br>
+          文心店｜台中市南屯區文心路一段215號<br>
+          電話：04-23829665
+        </address>
+        <ul>
+          <li>Taipei 台北</li>
+        </ul>
+        <address>
+          中山店｜台北市大同區南京西路18巷20號<br>
+          電話：02-2588883
+        </address>
+      </div>
+     </div>
+  </footer>
+  </body>
 </html>
