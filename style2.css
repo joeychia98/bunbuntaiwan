@@ -357,14 +357,17 @@ footer {
     font-size: 32px;
     margin-top: 150px;
   }
-    .navbar {
-    flex-direction: row;       /* 一直橫排 */
+  .navbar {
+    display: flex;
+    flex-direction: row;      
     justify-content: flex-start;
     align-items: center;
     padding: 5px 20px;
+    width: 100%;
   }
 
   .nav-links {
+    display: flex;
     flex-direction: row;       /* 一直橫排 */
     justify-content: flex-end;
     align-items: center;
@@ -381,7 +384,7 @@ footer {
   }
 
    .logo img {
-    height: 30px;  /* 或 60px 視覺好看即可 */
+    height: 30px;
     padding-left: 0px;
   }
 }
