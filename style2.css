@@ -365,14 +365,16 @@ footer {
     align-items: center;
     margin-left: auto;
     white-space: nowrap;
-    gap: 10px;
+    gap: 10px;  
     font-size: 10px;
+    margin-right: 20px;
   }
 
   .nav-links a {
     font-size: 10px;     
     padding: 8px 10px;
     text-decoration: none;
+    margin-right: 20px;
   }
 
    .logo img {
