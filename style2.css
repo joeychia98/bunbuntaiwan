@@ -363,18 +363,17 @@ footer {
     flex-direction: row;   
     justify-content: flex-end;
     align-items: center;
-    margin-left: auto;
     white-space: nowrap;
     gap: 10px;  
-    font-size: 10px;
-    margin-right: 20px;
+    font-size: 12px;
+    padding-right: 20px;
   }
 
   .nav-links a {
-    font-size: 10px;     
+    font-size: 12px;     
     padding: 8px 10px;
     text-decoration: none;
-    margin-right: 20px;
+    padding-right: 20px;
   }
 
    .logo img {
@@ -383,8 +382,12 @@ footer {
   }
 
     .cart {
-    width: 100%;
+    width: 60%;
     left: 0;
     right: 0;
   }
+
+  .cart-icon {
+  font-size: 12px;
+}
 }
