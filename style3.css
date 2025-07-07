@@ -559,26 +559,31 @@ h3{
     flex-direction: row;   
     justify-content: flex-end;
     align-items: center;
-    margin-left: auto;
     white-space: nowrap;
-    gap: 10px;
-    font-size: 10px;
+    gap: 10px;  
+    font-size: 12px;
+    margin-left: 50px;
   }
 
   .nav-links a {
-    font-size: 10px;     
-    padding: 8px 10px;
+    font-size: 12px;     
+    padding: 8px;
     text-decoration: none;
   }
 
-   .logo img {
+  .logo img {
     height: 50px;
     padding-left: 0px;
   }
 
-    .cart {
-    width: 100%;
+  .cart {
+    width: 60%;
     left: 0;
     right: 0;
   }
+
+.cart-icon {
+  font-size: 18px;
+}
+
 }
