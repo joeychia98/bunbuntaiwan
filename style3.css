@@ -259,7 +259,12 @@ footer {
 h3{
   padding-top: 120px;
   font-size: 32px;
+  padding: 10px 40px;
+}
+
+.info-box h5 {
   padding: 0px;
+  font-size: 24px;
 }
 
 .store-map h3 {
@@ -271,11 +276,11 @@ h3{
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;  /* 與文字距離 */
-  width: 50%;    /* 想要比字短就可以50%或60% */
-  height: 4px;   /* 線的粗細 */
-  background-color: #f1c232; /* 亮黃色 (tailwind 黃色) */
-  border-radius: 2px; /* 稍微圓角更柔和 */
+  bottom: -4px; 
+  width: 50%;    
+  height: 4px;   
+  background-color: #f1c232; 
+  border-radius: 2px; 
 }
 
 .order-form {
@@ -453,12 +458,13 @@ h3{
 }
 
 .info-box {
-  background-color: #f9f9f9; /* 淺灰色背景 */
-  border: 1px solid #ccc;    /* 灰色邊框 */
-  padding: 15px;             /* 內邊距 */
-  border-radius: 8px;        /* 圓角 */
-  margin: 15px 0;            /* 上下間距 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影讓它更像textbox */
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc;    
+  padding: 15px;             
+  border-radius: 8px;        
+  margin: 15px 0;            
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; 
 }
 
 #confirm-summary h3 {
@@ -476,6 +482,7 @@ h3{
   width: 85%;
   margin-bottom: 20px;
   text-align: center;
+  margin: 0 auto;
 }
 
 #confirm-summary th, #confirm-summary td {
@@ -499,6 +506,12 @@ h3{
   background-color: #7b7d7e;
 }
 
+.summarytext {
+  text-align: center;
+  color: #41403f;
+  border-radius: 2px;
+  border-color: #f1c232;
+}
 
 
 /* 響應式 */
