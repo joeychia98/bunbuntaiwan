@@ -1,9 +1,6 @@
-const unlockedSteps = new Set([1]); // 預設只允許進入 step 1
+const unlockedSteps = new Set([1]); 
 
 window.onload = function () {
-
-const confirmModal = document.getElementById('confirmModal');
-
 document.querySelectorAll('.step-item').forEach(item => {
   item.addEventListener('click', function () {
     const targetStep = parseInt(this.dataset.step);
@@ -79,14 +76,9 @@ document.querySelectorAll('.step-item').forEach(item => {
       <p><strong>收貨人姓名：</strong>${recipientName}</p>
       <p><strong>收貨人電話：</strong>${recipientPhone}</p>
     `;
-
-    confirmModal.style.display = 'block';
   });
 
-  // 加入 global 作用域，供 HTML 中的 button 使用
   window.nextToReceipt = function () {
-    confirmModal.style.display = 'none';
-    // 如果你之後想真的送出表單：form.submit();
 
   const tempForm = document.createElement("form");
   tempForm.method = "POST";
@@ -101,7 +93,6 @@ document.querySelectorAll('.step-item').forEach(item => {
     tempForm.appendChild(input);
   };
 
-  // 加入各欄位
   addField("buyerName", document.getElementById("buyerName").value);
   addField("buyerPhone", document.getElementById("buyerPhone").value);
   addField("buyerLineId", document.getElementById("buyerLineId").value);
@@ -120,8 +111,8 @@ document.querySelectorAll('.step-item').forEach(item => {
   document.body.appendChild(tempForm);
   tempForm.submit();
 
-  alert("✅ 訂單已送出！我們會用 LINE 與您聯繫！");
-
+  alert("✅ 訂單已送出！將前往 BUN BUN 官方 LINE 與我們聯繫！");
+  window.location.href = "https://line.me/R/ti/p/@bunbun";
   };
 
 };

@@ -359,4 +359,8 @@ body{
   .cart-icon {
   font-size: 18px;
   }
+
+  .swiper{
+    height: 50vh;
+  }
 }

@@ -375,19 +375,19 @@ footer {
     text-decoration: none;
   }
 
-   .logo img {
+  .logo img {
     height: 50px;
     padding-left: 0px;
   }
 
-    .cart {
+  .cart {
     width: 60%;
     left: 0;
     right: 0;
   }
 
-  .cart-icon {
-  font-size: 12px;
+.cart-icon {
+  font-size: 18px;
 }
 
 .label-set{
